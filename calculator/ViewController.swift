@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var number1 = 0.0,number2=0.0,number3=0.0
+    var number1:Float = 0,number2:Float = 0,number3 :Float = 0
     var ope:Int = 0
     
     let myLabel : UILabel = UILabel(frame : CGRectMake( 130, 50, 150, 40))
@@ -83,11 +83,11 @@ class ViewController: UIViewController {
         ope=4
     }
     @IBAction func clear(sender: AnyObject){
-        number1=0.0
-        number2=0.0
-        number3=0.0
+        number1=0
+        number2=0
+        number3=0
         ope=0
-        myLabel.text="0.0"
+        myLabel.text="0"
     }
     @IBAction func equal(sender: AnyObject){
         switch ope{
@@ -103,9 +103,11 @@ class ViewController: UIViewController {
             break
         }
         myLabel.text = "\(number3)"
+        number1=number3
+        number2=0
     }
     
-    func bunki (i:Double){
+    func bunki (i:Float){
         if(ope==0){
             number1=number1*10+i
             myLabel.text = "\(number1)"
